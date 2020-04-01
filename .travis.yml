@@ -18,7 +18,7 @@ after_success:
   - docker build -t alexchromets/multi-server ./server
   - docker build -t alexchromets/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push built images to docker hub
   - docker push alexchromets/multi-client
   - docker push alexchromets/multi-nginx
