@@ -9,6 +9,9 @@ services:
     image: 'redis:latest'
   nginx:
     restart: always
+    depends_on:
+      - api
+      - client
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
