@@ -5,7 +5,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t alexchromets/react-test -f ./client/Dockerfile.dev .
+  # Specify a dockerfile and say to get a client dir as a context
+  - docker build -t alexchromets/react-test -f ./client/Dockerfile.dev ./client
 
 # -e CI=true (for exit after tests execution)
 script:
